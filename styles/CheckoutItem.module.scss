@@ -3,7 +3,7 @@
   flex-direction: column;
   background-color: aqua;
 
-  height: 81px;
+  height: 80px;
   margin-bottom: 15px;
   background: #fffce4;
 
@@ -19,18 +19,17 @@
   }
   .CheckoutItemLeft {
     display: flex;
-    img {
+    .imgProduct {
       margin-right: 15px;
     }
     p {
       font-family: "Poppins";
-      font-style: normal;
       font-weight: 500;
       font-size: 16px;
       color: rgba(0, 0, 0, 0.7);
+      margin: 0;
       span {
         font-family: "Poppins";
-        font-style: normal;
         font-weight: 400;
         font-size: 15px;
 
@@ -40,16 +39,16 @@
   }
   .CheckoutItemRight {
     display: flex;
-    img {
+    .imgquantity {
       cursor: pointer;
       width: 31px;
       height: 31px;
       margin-right: 15px;
     }
     p {
+      margin: 0;
       margin-right: 15px;
       font-family: "Poppins";
-      font-style: normal;
       font-weight: 600;
       font-size: 20px;
 

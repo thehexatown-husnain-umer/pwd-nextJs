@@ -86,7 +86,7 @@ function DashBoard() {
           <Order />
         </div>
         {modalVisibility && (
-          <div className="CartModal">
+          <div className={styles.CartModal}>
             <Cart
               product={currentProduct}
               modalVisibility={setModalVisibility}

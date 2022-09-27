@@ -7,7 +7,7 @@ const Menu = ({ category, onClick, currentCategory }) => {
     <div
       className={
         currentCategory.id == category.id
-          ? (styles.Menu, styles.backgoundColor)
+          ? `${styles.Menu} ${styles.backgoundColor}`
           : styles.Menu
       }
       onClick={onClick}

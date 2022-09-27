@@ -13,7 +13,9 @@ const Product = ({ product, openModal, setCurrentProduct }) => {
   return (
     <>
       <div className={styles.Product}>
-        <Image src={ProductImage} />
+        <div className="image-product">
+          <Image src={ProductImage} />
+        </div>
         <div className={styles.productDetails}>
           <p>
             {product?.attributes ? product?.attributes.title : product.title}
@@ -25,8 +27,9 @@ const Product = ({ product, openModal, setCurrentProduct }) => {
                 : product.mediumPrice}
             </span>
           </p>
-
-          <Image src={checkout} onClick={openCartModal} />
+          <div className="image-plus">
+            <Image src={checkout} onClick={openCartModal} />
+          </div>
         </div>
       </div>
     </>

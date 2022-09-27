@@ -9,11 +9,18 @@
   padding: 8px;
   background: #f2f2f2;
   border-radius: 8px;
+  .image-product {
+    width: 190px;
+    height: 170px;
+  }
   .productDetails {
     display: flex;
-    margin-top: 9px;
+    align-items: center;
+    height: 55px;
     justify-content: space-between;
-    img {
+    .image-plus {
+      width: 29.17px;
+      height: 29.17px;
       cursor: pointer;
     }
   }

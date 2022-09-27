@@ -1,10 +1,13 @@
 .Menu {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  width: 117px;
-  height: 116px;
+  justify-content: center;
+  // width: 100%;
+  padding: 28px 0px 21px 0px;
+  align-items: center;
+  // margin-top: 25px;
+
   p {
     margin-top: 10px;
     font-family: "Keep Calm";

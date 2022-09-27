@@ -20,7 +20,9 @@ const CheckoutItem = ({ Item }) => {
     <div className={styles.CheckoutItemContainer}>
       <div className={styles.Item}>
         <div className={styles.CheckoutItemLeft}>
-          <Image src={checkoutProductImage} />
+          <div className={styles.imgProduct}>
+            <Image src={checkoutProductImage} />
+          </div>
           <p>
             {Item.title}
             <br />
@@ -28,12 +30,16 @@ const CheckoutItem = ({ Item }) => {
           </p>
         </div>
         <div className={styles.CheckoutItemRight}>
-          <Image
-            src={checkoutSubtract}
-            onClick={() => handleDecreaseCart(Item)}
-          />
+          <div className={styles.imgquantity}>
+            <Image
+              src={checkoutSubtract}
+              onClick={() => handleDecreaseCart(Item)}
+            />
+          </div>
           <p>{Item.quantity}</p>
-          <Image src={checkoutAdd} onClick={() => handleAddToCart(Item)} />
+          <div className={styles.imgquantity}>
+            <Image src={checkoutAdd} onClick={() => handleAddToCart(Item)} />
+          </div>
         </div>
       </div>
     </div>

@@ -6,12 +6,12 @@ const NavItem = ({ category, onClick, currentCategory }) => {
     <div
       className={
         category && category?.id == currentCategory?.id
-          ? (styles.NavItem, styles.backgroundColor)
+          ? `${styles.NavItem} ${styles.backgroundColor}`
           : styles.NavItem
       }
       onClick={onClick}
     >
-      <p>{category ? category.name : styles.All}</p>
+      <p>{category ? category.name : "All"}</p>
     </div>
   );
 };

@@ -1,10 +1,11 @@
 import Header from "../src/components/Header";
-// import SideNav from "../components/sideNav/SideNav";
-// import Category from "../../components/categories";
-// import Order from "../../components/order";
+import SideNav from "../src/components/sideNav/SideNav";
+import Category from "../src/components/categories/Category";
+import Order from "../src/components/order";
 import axios from "axios";
 import url from "../src/config/url";
-// import Cart from "../../components/cartModal";
+import styles from "../styles/DashBoard.module.scss";
+import Cart from "../src/components/cartModal";
 import { useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -62,13 +63,13 @@ function DashBoard() {
 
   return (
     <>
-      <div className="Home">
+      <div className={styles.Home}>
         <Header
           Name={user?.username}
           setProducts={setProducts}
           getAllProducts={getAllProducts}
         />
-        {/* <div className="HomeBody">
+        <div className={styles.HomeBody}>
           <SideNav
             currentCategory={currentCategory}
             categories={categories}
@@ -83,7 +84,7 @@ function DashBoard() {
             setCurrentCategory={setCurrentCategory}
           />
           <Order />
-        </div> */}
+        </div>
         {modalVisibility && (
           <div className="CartModal">
             <Cart

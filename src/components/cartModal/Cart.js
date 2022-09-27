@@ -18,6 +18,7 @@ const Cart = ({ modalVisibility, product }) => {
   );
   const [extra, setExtra] = useState(0);
   const [sizeChecked, setSizeChecked] = useState("medium");
+  const [pizaSize, setPizaSize] = useState("medium");
 
   const [quantity, setQuantity] = useState(1);
   const increament = () => {
@@ -36,6 +37,7 @@ const Cart = ({ modalVisibility, product }) => {
           ? product?.attributes.mediumPrice
           : product.mediumPrice
       );
+      setPizaSize("medium");
     }
     if (value == "small") {
       setSize(
@@ -43,6 +45,7 @@ const Cart = ({ modalVisibility, product }) => {
           ? product?.attributes.smallPrice
           : product.smallPrice
       );
+      setPizaSize("small");
     }
     if (value == "large") {
       setSize(
@@ -50,6 +53,7 @@ const Cart = ({ modalVisibility, product }) => {
           ? product?.attributes.largePrice
           : product.largePrice
       );
+      setPizaSize("large");
     }
   };
   const onExtraChange = (value) => {
@@ -61,6 +65,7 @@ const Cart = ({ modalVisibility, product }) => {
       title: product?.attributes ? product?.attributes.title : product.title,
       quantity: quantity,
       price: size,
+      size: pizaSize,
       extraPrice: extra,
     };
 

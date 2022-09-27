@@ -12,7 +12,7 @@ import { login, Organization } from "../src/features/loginSlice";
 
 const Login = () => {
   const dispatch = useDispatch();
-  // const navigate = useNavigate();
+  const router = useRouter();
   const [loading, setLoading] = useState(false);
   const schema = Yup.object().shape({
     email: Yup.string()
@@ -33,7 +33,7 @@ const Login = () => {
         dispatch(login(res.data));
         console.log("res", res);
         getuserOrganization(res.data.user);
-        // navigate("/dashboard");
+        router.push("/dashboard");
       })
       .catch((error) => {
         setLoading(false);

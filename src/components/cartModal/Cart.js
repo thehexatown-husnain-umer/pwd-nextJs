@@ -12,9 +12,6 @@ import { ToastContainer, toast } from "react-toastify";
 const Cart = ({ modalVisibility, product }) => {
   const notify = () => toast("Added");
   const dispatch = useDispatch();
-  useEffect(() => {
-    console.log("exxx", product.extras);
-  }, []);
 
   const [size, setSize] = useState(
     product?.attributes ? product?.attributes.mediumPrice : product.mediumPrice

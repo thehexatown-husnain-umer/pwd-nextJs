@@ -11,16 +11,17 @@ export const loginSlice = createSlice({
     login(state, action) {
       state.token = action.payload.jwt;
       state.user = action.payload.user;
-      //   state.cartItems = [];
     },
     Organization(state, action) {
       state.organization = action.payload;
-      //   state.cartItems = [];
+    },
+    SignOut(state, action) {
+      state.token = action.payload;
     },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { login, Organization } = loginSlice.actions;
+export const { login, Organization, SignOut } = loginSlice.actions;
 
 export default loginSlice.reducer;

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Logout from "../logoutModal";
 import styles from "../../../styles/Header.module.scss";
 import React, { useEffect, useState } from "react";
 import brand from "../../../public/brand.svg";
@@ -10,8 +11,9 @@ import url from "../../config/url";
 import { useSelector } from "react-redux";
 
 const Header = ({ setProducts, getAllProducts, Name }) => {
-  const user = useSelector((state) => state.login.user);
+  // const user = useSelector((state) => state.login.user);
   const organization = useSelector((state) => state.login.organization);
+  const [openLogout, setOpenLogout] = useState(false);
   const token = useSelector((state) => state.login.token);
   const [search, setSearch] = useState("");
   useEffect(() => {
@@ -53,10 +55,11 @@ const Header = ({ setProducts, getAllProducts, Name }) => {
       </div>
       <div className={styles.HeaderRight}>
         <div className={styles.profileImage}>
-          <Image src={Profile} />
+          <Image onClick={() => setOpenLogout(true)} src={Profile} />
         </div>
-        <Image src={drop_Drown} />
+        <Image onClick={() => setOpenLogout(true)} src={drop_Drown} />
       </div>
+      {openLogout && <Logout setOpenLogout={setOpenLogout} />}
     </div>
   );
 };

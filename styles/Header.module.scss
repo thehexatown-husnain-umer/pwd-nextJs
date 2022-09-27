@@ -59,6 +59,8 @@
     }
   }
   .HeaderRight {
+    position: relative;
+    cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;

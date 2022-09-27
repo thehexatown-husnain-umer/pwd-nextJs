@@ -1,15 +1,17 @@
 import Head from "next/head";
-import Image from "next/image";
 import DashBoard from "./dashboard";
 import Login from "./login";
 import { Provider } from "react-redux";
+import { useRouter } from "next/router";
 import store from "../src/app/store";
 import { PersistGate } from "redux-persist/integration/react";
 import { persistStore } from "redux-persist";
 let persistor = persistStore(store);
 import styles from "../styles/Home.module.css";
+import { Router } from "next/router";
 
 export default function Home() {
+  const router = useRouter();
   return (
     <div className={styles.container}>
       <Head>
@@ -20,7 +22,7 @@ export default function Home() {
       <main>
         <Provider store={store}>
           <PersistGate persistor={persistor}>
-            <Login />
+            {router.push("/login")}
           </PersistGate>
         </Provider>
       </main>

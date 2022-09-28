@@ -1,4 +1,5 @@
 import Header from "../src/components/Header";
+import { useRouter } from "next/router";
 import SideNav from "../src/components/sideNav/SideNav";
 import Category from "../src/components/categories/Category";
 import Order from "../src/components/order";
@@ -8,9 +9,11 @@ import styles from "../styles/DashBoard.module.scss";
 import Cart from "../src/components/cartModal";
 import { useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
+import ProtectedRoute from "../src/context/auth-context";
 import "react-toastify/dist/ReactToastify.css";
 import { useSelector } from "react-redux";
 function DashBoard() {
+  const router = useRouter();
   const token = useSelector((state) => state.login.token);
   const user = useSelector((state) => state.login.user);
   const organization = useSelector((state) => state.login.organization);
@@ -21,7 +24,9 @@ function DashBoard() {
 
   const [currentProduct, setCurrentProduct] = useState({});
   const [currentCategory, setCurrentCategory] = useState({});
-
+  useEffect(() => {
+    token ? router.push("/dashboard") : router.push("/login");
+  }, []);
   useEffect(() => {
     getAllProducts();
     getAllCategories();

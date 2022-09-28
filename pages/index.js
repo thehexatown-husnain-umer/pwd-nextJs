@@ -1,6 +1,4 @@
 import Head from "next/head";
-import DashBoard from "./dashboard";
-import Login from "./login";
 import { Provider } from "react-redux";
 import { useRouter } from "next/router";
 import store from "../src/app/store";
@@ -8,7 +6,6 @@ import { PersistGate } from "redux-persist/integration/react";
 import { persistStore } from "redux-persist";
 let persistor = persistStore(store);
 import styles from "../styles/Home.module.css";
-import { Router } from "next/router";
 
 export default function Home() {
   const router = useRouter();

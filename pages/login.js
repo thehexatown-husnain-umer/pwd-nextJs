@@ -81,7 +81,7 @@ const Login = () => {
                       onBlur={handleBlur}
                       value={values.email}
                     />
-                    <p className="error">
+                    <p className={styles.error}>
                       {errors.email && touched.email && errors.email}
                     </p>
                   </div>
@@ -94,7 +94,7 @@ const Login = () => {
                       onBlur={handleBlur}
                       value={values.password}
                     />
-                    <p className="error">
+                    <p className={styles.error}>
                       {errors.password && touched.password && errors.password}
                     </p>
                   </div>
